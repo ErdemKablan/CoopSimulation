@@ -6,7 +6,7 @@ Prametrik t değişkeni json dosyasından okunmaktadır. (LifeCycleMonth.json)
 #Değişkenler:
 
    - Var olan kümes hayvan ortalama yaşam süreleri.
-   - Dişi kümes hayvanlarının bir seferde doğurabileceği yavru adedi. (Rondom değer verilmektedir)
+   - Dişi kümes hayvanlarının bir seferde doğurabileceği yavru adedi. (Random değer verilmektedir)
    - Doğumların dişi erkek yüzdesi. (En yakın tam sayıya yuvarlanacak.)
    - Doğum öncesi, doğum süreci ve doğrum sonraki süreçler.
    - Dişi kümes hayvanlarının doğurganlıklarını yitirme süreleri
