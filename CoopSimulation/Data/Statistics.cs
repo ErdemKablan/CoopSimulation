@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CoopSimulation.Data
@@ -10,6 +8,7 @@ namespace CoopSimulation.Data
     public class Statistics
     {
         public static int months;
+        public static int defaultMonths = 15;
         public static int averageLifeTime;
         public static int timeofPregnancy;
         public static int loseofFertility;
@@ -33,22 +32,27 @@ namespace CoopSimulation.Data
         }
         public static int RandomIntValue()
         {
-            Random random = new Random(); 
+            Random random = new Random();
             return random.Next(2, 10);
         }
 
         private int LifeCycleMonth()
         {
-            using (StreamReader _StreamReader = new StreamReader(Application.StartupPath + @"\LifeCycleMonth.json"))
+            if (File.Exists(Application.StartupPath + @"\LifeCycleMonth.json"))
             {
-                string jsonData = _StreamReader.ReadToEnd();
-                LifeCycleMonths jsonConvert = JsonConvert.DeserializeObject<LifeCycleMonths>(jsonData);
+                using (StreamReader _StreamReader = new StreamReader(Application.StartupPath + @"\LifeCycleMonth.json"))
+                {
+                    string jsonData = _StreamReader.ReadToEnd();
+                    LifeCycleMonths jsonConvert = JsonConvert.DeserializeObject<LifeCycleMonths>(jsonData);
 
-                if (jsonConvert.LifeCycleMonth != 0)
-                   return jsonConvert.LifeCycleMonth;
-                else
-                    return 15;
+                    if (jsonConvert.LifeCycleMonth != 0)
+                        return jsonConvert.LifeCycleMonth;
+                    else
+                        return defaultMonths;
+                }
             }
+            else
+                return defaultMonths;
         }
     }
 }

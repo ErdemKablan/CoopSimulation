@@ -2,7 +2,6 @@
 
 using CoopSimulation.Data;
 using CoopSimulation.Enums;
-using System;
 using System.Collections.Generic;
 
 namespace CoopSimulation.Collection
@@ -16,9 +15,8 @@ namespace CoopSimulation.Collection
         {
             percentageofBorn = Statistics.percentageofBorn;
         }
-        public Poultry AddPoultry(PoultryEnum poultryEnum, GenderEnum genderEnum)
+        public void AddPoultry(PoultryEnum poultryEnum, GenderEnum genderEnum)
         {
-            Poultry poultry = null;
             PoultryList.Add(new Poultry()
             {
                 Age = 0,
@@ -31,7 +29,6 @@ namespace CoopSimulation.Collection
                 PercentageofBorn = Statistics.percentageofBorn,
                 TimeofPregnancy = Statistics.timeofPregnancy,
             });
-            return poultry;
         }
 
         public int GetPercentageofBorn()

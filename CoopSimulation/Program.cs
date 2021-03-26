@@ -1,4 +1,6 @@
-﻿using CoopSimulation.Services;
+﻿using CoopSimulation.Services.RabbitServices;
+using CoopSimulation.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +13,13 @@ namespace CoopSimulation
     {
         static void Main(string[] args)
         {
-            CoopService coopService = new CoopService();
-            coopService.CreateCoopSimulation();
+            var serviceCollection = new ServiceCollection();
+            CoopService.ConfigureService(serviceCollection);
+
+            using (var serviceProvider = serviceCollection.BuildServiceProvider())
+            {
+                serviceProvider.GetRequiredService<RabbitService>().StartCoop();
+            }
         }
     }
 }

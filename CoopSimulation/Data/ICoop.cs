@@ -1,13 +1,11 @@
 ﻿
-using CoopSimulation.Data;
 using CoopSimulation.Enums;
-using System.Collections.Generic;
 
-namespace CoopSimulation.Collection
+namespace CoopSimulation.Data
 {
     public interface ICoop
     {
-        Poultry AddPoultry(PoultryEnum poultryEnum, GenderEnum genderEnum);
+        void AddPoultry(PoultryEnum poultryEnum, GenderEnum genderEnum);
 
         int GetPercentageofBorn();
 
