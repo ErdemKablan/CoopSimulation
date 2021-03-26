@@ -13,7 +13,7 @@ namespace CoopSimulation.Services.RabbitServices
         {
             getInstance();
             LifeCyclePoultry(new Coop(), Statistics.months);
-        } 
+        }
         public void getInstance()
         {
             Statistics.getInstance();
@@ -76,7 +76,7 @@ namespace CoopSimulation.Services.RabbitServices
         {
             foreach (Poultry poultry in coop.PoultryList.ToList())
             {
-                if (coop.IsDeath(poultry.Age))
+                if (IsDeath(poultry.Age))
                 {
                     coop.PoultryList.Remove(poultry);
                 }
@@ -117,6 +117,29 @@ namespace CoopSimulation.Services.RabbitServices
             sb.AppendLine(string.Format("Total :" + FemaleRabbitCount + " female " + MaleRabbitCount + " male rabbits"));
 
             MessageBox.Show(sb.ToString(), "Result");
+        }
+        public bool IsDeath(int age)
+        {
+            int deathAge = Statistics.RandomIntValue();
+
+            if (age < 6)
+                return false;
+            else if (age >= 6 && age <= 12)
+            {
+                if (deathAge <= 8)
+                    return false;
+                else
+                    return true;
+            }
+            else if (age > 12 && age < Statistics.averageLifeTime)
+            {
+                if (deathAge >= 4)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return true;
         }
     }
 }

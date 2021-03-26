@@ -14,6 +14,8 @@ namespace CoopSimulation.Data
         public static int loseofFertility;
         public static int percentageofBorn;
         public static int addLife;
+        public static int lowRisk;
+        public static int highLife;
         private static Statistics singleton = new Statistics();
         public static Statistics getInstance()
         {
@@ -29,6 +31,8 @@ namespace CoopSimulation.Data
             loseofFertility = 6;
             percentageofBorn = 25;
             addLife = 1;
+            lowRisk = 8;
+            highLife = 4;
         }
         public static int RandomIntValue()
         {

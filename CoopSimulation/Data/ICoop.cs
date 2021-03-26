@@ -13,6 +13,5 @@ namespace CoopSimulation.Data
 
         int GetNumberofNewborn();
 
-        bool IsDeath(int age);
     }
 }

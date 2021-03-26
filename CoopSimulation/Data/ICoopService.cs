@@ -8,6 +8,7 @@ namespace CoopSimulation.Data
         void getInstance();
         void LifeCyclePoultry(Coop _coop, int _months);
         void AddLifeCycle(Coop _coop);
+        bool IsDeath(int age);
         void Show(int _months, Coop _coop);
     }
 }
