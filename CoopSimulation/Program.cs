@@ -14,7 +14,7 @@ namespace CoopSimulation
         static void Main(string[] args)
         {
             var serviceCollection = new ServiceCollection();
-            CoopService.CoopSingletonService(serviceCollection);
+            CoopService.CoopDependencyInjection(serviceCollection);
 
             using (var serviceProvider = serviceCollection.BuildServiceProvider())
             {

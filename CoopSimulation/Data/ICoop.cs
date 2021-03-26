@@ -13,5 +13,6 @@ namespace CoopSimulation.Data
 
         int GetNumberofNewborn();
 
+        bool IsDeath(PoultryEnum poultryEnum, int age);
     }
 }

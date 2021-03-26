@@ -6,7 +6,7 @@ namespace CoopSimulation.Services
 {
     public class CoopService
     {
-        public static void CoopSingletonService(IServiceCollection services)
+        public static void CoopDependencyInjection(IServiceCollection services)
         {
             services.AddSingleton<RabbitService>();
         }

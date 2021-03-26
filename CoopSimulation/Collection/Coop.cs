@@ -45,6 +45,34 @@ namespace CoopSimulation.Collection
         {
             numberofNewborn = Statistics.RandomIntValue();
             return numberofNewborn;
-        }       
+        }
+
+        public bool IsDeath(PoultryEnum poultryEnum, int age)
+        {
+            int deathAge = Statistics.RandomIntValue();
+
+            if (poultryEnum == PoultryEnum.Rabbit)
+            {
+                if (age < 6)
+                    return false;
+                else if (age >= 6 && age <= 12)
+                {
+                    if (deathAge <= 8)
+                        return false;
+                    else
+                        return true;
+                }
+                else if (age > 12 && age < Statistics.averageLifeTime)
+                {
+                    if (deathAge >= 4)
+                        return true;
+                    else
+                        return false;
+                }
+                else
+                    return true;
+            }
+            return false;
+        }
     }
 }
