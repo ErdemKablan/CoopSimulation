@@ -1,7 +1,7 @@
 # Coop Simulation
 
 Kümeste t=0 anında 1 erkek ve 1 dişi tavşan var. İstenilen t zaman dilimi sonrasında kümesteki tavşanların yaş ve cinsiyet dağılımlarının ekran çıktısı verilecektir.
-Prametrik t değişkeni json dosyasından okunmaktadır. (LifeCycleMonth.json) 
+Prametrik t değişkeni json dosyasından okunmaktadır. (Proje derlendği zaman LifeCycleMonth.json 'sı derlenen klasörün içerisine alınmalı. Yoksa Default t verilecektir.) 
 
 #Değişkenler:
 
